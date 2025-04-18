@@ -1,0 +1,186 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <style>
+    /* Overall Page Style */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Cart Header */
+h1 {
+  text-align: center;
+  color: #2a9d8f;
+  margin-bottom: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #264653;
+  margin-top: 30px;
+}
+
+/* Cart Container */
+#cartItems {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual Cart Item */
+.cart-item {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Product Image */
+.cart-item img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Item Details */
+.cart-item div {
+  flex: 1;
+}
+
+/* Price Line */
+.cart-item p {
+  margin: 6px 0;
+}
+
+/* Quantity Controls */
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cart-controls span {
+  min-width: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Quantity and Remove Buttons */
+.cart-controls button {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-controls button:hover {
+  background-color: #dee2e6;
+}
+
+/* Remove button style */
+.cart-controls button:last-child {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.cart-controls button:last-child:hover {
+  background-color: #d32f2f;
+}
+
+/* Total Display */
+#totalPrice {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Footer Buttons */
+button.btn {
+  display: inline-block;
+  margin: 20px 10px 0;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #e63946;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #d62828;
+}
+
+.btn-secondary {
+  background-color: #f4a261;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #e76f51;
+}
+
+  </style>
+</head>
+<body>
+
+<h1>🛒 Your Shopping Cart</h1>
+<a href="shoptemp.html">Back to Shop</a> | <a href="checkout.html">Checkout</a>
+
+<div id="cart-container"></div>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const container = document.getElementById("cart-container");
+
+  function renderCart() {
+    container.innerHTML = "";
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Cart is empty.</p>";
+      return;
+    }
+
+    cart.forEach((item, i) => {
+      container.innerHTML += `
+        <div class="cart-item">
+          
+
+          ${item.name} - ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}
+          <button onclick="removeItem(${i})">Remove</button>
+        </div>`;
+    });
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Mart - Shop/deals</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 0px;
+            margin: 0px;
+            ;
+            background: #f4f4f4;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+
+        #logo{
+    height: 60px;
+    border-radius: 30px;
+}
+.logo {
+    padding: 10px;
+    height: 10px;
+}
+
+        button {
+            background: green;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quantity {
+            width: 50px;
+        }
+
+   
+        .main{
+    display: flexbox;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    overflow-x:auto;
+    scroll-behavior: smooth;
+    gap:1rem;
+    transition: 3s;
+    
+  }
+  h2{
+    display: inline-block;
+
+    text-align: left;
+    padding: 15px;
+    /* background-color: #28a745; */
+    font-size: 2rem;
+    background-color: #41ab61;
+    color: white;
+  }
+  .main :hover
+ {
+    color: black;
+    transform: scale(1.1);
+   
+ }
+        .product img {
+            width: 100%;
+            height: 50%;
+        }
+        .coupon{
+    border-radius: 25px;
+    margin-left: 40px;
+    width: 20%;
+    display: inline-block;
+    border: 2px solid black;
+}
+.coupon p{
+    font-size: 1.5em;
+    color: #28a745;
+    margin-left: 25px;
+}
+    </style>
+    <link rel="stylesheet" href="shop.css"/> </head>
+
+<body>
+    <nav class="navbar">
+        <img src="log02.jpg" id="logo">
+        <ul class="nav-links">
+            <li><a href="indextemp.html">Home</a></li>
+            <li class="menu-item dropdown">
+                <a href="shoptemp.html">Shop</a>
+                <ul class="dropdown-list">
+                    <li><a href="vegetabletemp.html">Vegetables</a></li>
+                    <li><a href="fruittemp.html">Fruits</a></li>
+                    <li><a href="dairytemp.html">Dairy products</a></li>
+            </li>
+        </ul>
+        <li><a href="aboutus.html">About Us </a></li>
+        <li><a href="deals.html">Deals</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="Search products...">
+            <ul id="results"></ul>
+        </div>
+        <a href="form.html" class="form">Log-in</a>
+        <a class="cart" href="cart2.html">🛒</a>
+    </nav>
+    <br>
+
+    <!-- <h1>🛒 Fresh Mart - Shop</h1> -->
+    <!-- <a href="cart.html">Go to Cart</a> -->
+    <marquee>
+
+        <h2>Today's special offers</h2>
+    </marquee>
+    <div class="main">
+        <div class="product">
+            <b>15% off</b>
+            <br>
+            <br>
+            <img src="potato.jpg">
+            <p class="name">Potato</p>
+            <p class="price">20</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <b>10% off</b>
+            <br>
+            <br>
+            <img src="ridge guard.jpg">
+            <p class="name">ridge guard</p>
+            <p class="price">25</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <b>5% off</b>
+            <br>
+            <br>
+            <img src="milk..jpg">
+            <p class="name">Milk</p>
+            <p class="price">40</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <marquee>
+
+        <h2>Exclusive offers</h2>
+    </marquee>
+    <div class="main">
+        <div class="product">
+            <b>25% off</b>
+        <br>
+        <br>
+            <img src="redpaper.jpg">
+            <p class="name">redpaper</p>
+            <p class="price">30</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <b>By one get one free</b>
+        <br>
+        <br>
+            <img src="springonion.jpg">
+            <p class="name">springonion</p>
+            <p class="price">30</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <b>10% off</b>
+        <br>
+        <br>
+            <img src="radish.jpg">
+            <p class="name">Radish</p>
+            <p class="price">25</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <marquee>
+        <h2>today's special</h2>
+    </marquee>
+    <div class="main">
+        <div class="product">
+            <b>Get 50% off on 1kg</b>
+            <br><br>
+            <img src="paneer.jpg">
+            <p class="name">Paneer</p>
+            <p class="price">80</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <b>save upto 20 rupees</b>
+            <img src="cheeseslice.jpg">
+            <p class="name">cheeseslice</p>
+            <p class="price">69</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <b>5%  off</b>
+            <img src="coffe.jpg">
+            <p class="name">coffee</p>
+            <p class="price">90</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="coupon">
+        <h3>Coupan Codes</h3>
+        <p>NEW05</p>
+        <p>GET50</p>
+        <P>HDY46G</P>
+    </div>
+    <footer>
+        <p class="thanks"> - Thats all folks - </p>
+        <div class="app">
+            <p>Get in touch with us.</p>
+            <img src="facebook.jpg">
+            <img src="twit.jpg">
+            <img src="instagram.jpg">
+        </div>
+        <p>Contact Us : 5461284315</p>
+        <p>Copyright since 2008</p>
+        <p>Designed by Riya and Himesh</p>
+    </footer>
+
+    <!-- Add all other products here -->
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        document.querySelectorAll(".add-to-cart").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const product = btn.closest(".product");
+                const name = product.querySelector(".name").innerText;
+                const price = parseFloat(product.querySelector(".price").innerText);
+                const quantity = parseInt(product.querySelector(".quantity").value);
+
+                const existing = cart.find(item => item.name === name);
+                if (existing) {
+                    existing.quantity += quantity;
+                } else {
+                    cart.push({ name, price, quantity });
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert(`${quantity} x ${name} added to cart!`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Mart</title>
+    <style>
+        /* Basic styling — you can move to index.css later */
+        /* .main,
+        .main2,
+        .main3 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .sub,
+        .sub2,
+        .sub3 {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        
+        */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .detail-box {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+    </style>
+    <script>
+        // window.onload=function(){
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll('.slide');
+            let index = 0;
+
+            function showNextSlide() {
+                slides[index].style.display = "none"; // Hide the current slide
+                index = (index + 1) % slides.length; // Move to the next slide (or loop back to the first)
+                slides[index].style.display = "flex"; // Show the next slide
+            }
+
+            // Ensure only the first slide is visible initially
+            slides.forEach((slide, i) => {
+                slide.style.display = i === 0 ? "flex" : "none";
+            });
+
+            // Automatically change slides every 3 seconds
+            setInterval(showNextSlide, 3000);
+        });
+        document.querySelector('.menu-item.dropdown').addEventListener('click', function (e) {
+            const dropdownList = this.querySelector('.dropdown-list');
+            dropdownList.style.display = dropdownList.style.display === 'block' ? 'none' : 'block';
+            e.preventDefault(); // Prevent link default behavior
+        });
+        // }
+
+    </script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div id="homeView">
+        <nav class="navbar">
+            <img src="log02.jpg" id="logo">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="menu-item dropdown">
+                    <a href="shop.html">Shop</a>
+                    <ul class="dropdown-list">
+                        <li><a href="vegetable.html">Vegetables</a></li>
+                        <li><a href="fruit.html">Fruits</a></li>
+                        <li><a href="dairy.html">Dairy products</a></li>
+                </li>
+            </ul>
+            <li><a href="aboutus.html">About Us </a></li>
+            <li><a href="deals.html">Deals</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-bar" placeholder="Search products...">
+                <ul id="results"></ul>
+            </div>
+            <a href="form.html" class="form">Log-in</a>
+            <a class="cart" href="cart.html">🛒</a>
+            <!-- <a class="cart" href="cart.html">🛒</a> -->
+
+        </nav>
+        <br>
+        <!-- <div id="deal">
+        <marquee>on shopping above 150 get 10% discount . </marquee>
+    </div> -->
+        <div class="slider">
+            <div class="slide">
+                <img src="tomato.jpg" alt="Image 1">
+                <div class="text-content">
+                    <h3>Slide 1</h3 <p>Description for Slide 1</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="biiterground.jpg" alt="Image 2">
+                <div class="text-content">
+                    <h3>biiterground</h3>
+                    <p>Description for Slide 2</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="cabbage.jpg" alt="Image 3">
+                <div class="text-content">
+                    <h3>coliflower</h3>
+                    <p>Get 5% discount on 2kg coliiflower</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="chilli.jpg" alt="Image 4">
+                <div class="text-content">
+                    <h3>slide 4</h2>
+                        <p>Description for Slide 4</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="palak.jpg" alt="Image 5">
+                <div class="text-content">
+                    <h3>Slide 5</h3>
+                    <p>Description for Slide 5</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <h2>Top Offers</h2>
+        <div class="main" id="topOffers"></div>
+
+        <h2>Under 99</h2>
+        <div class="main2" id="under99"></div>
+
+        <h2>Under 49</h2>
+        <div class="main3" id="under49"></div>
+
+        <footer>
+            <p class="thanks"> - That's all folks - </p>
+            <div class="app">
+                <p>Get in touch with us.</p>
+                <img src="facebook.jpg" />
+                <img src="twit.jpg" />
+                <img src="instagram.jpg" />
+            </div>
+            <p>Contact Us : 5461284315</p>
+            <p>Copyright since 2008</p>
+            <p>Designed by Riya and Himesh</p>
+        </footer>
+    </div>
+
+    <div id="detailView" style="display:none;">
+        <h2>Product Detail</h2>
+        <div id="productDetail" class="detail-box"></div>
+        <button onclick="goBack()">← Back to Home</button>
+    </div>
+
+
+    <script>
+        const products = [
+            {
+                name: "Onion",
+                image: "onion.jpg",
+                quantity: "1kg",
+                price: 20,
+                discount: 0,
+                category: "topOffers"
+            },
+
+            {
+                name: "Mango",
+                image: "mango.jpg",
+                quantity: "2kg",
+                price: 199,
+                discount: 0,
+                category: "topOffers"
+            },
+
+            {
+                name: "Paneer",
+                image: "paneer.jpg",
+                quantity: "500gm",
+                price: 250,
+                discount: 20,
+                category: "topOffers"
+            },
+
+            {
+                name: "Cheese slices",
+                image: "cheeseslice.jpg",
+                quantity: "1 pack",
+                price: 150,
+                discount: 50,
+                category: "topOffers"
+            },
+
+            {
+                name: "Grapes",
+                image: "grapes.jpg",
+                quantity: "2kg",
+                price: 99,
+                discount: 0,
+                category: "under99"
+            },
+
+            {
+                name: "Peas",
+                image: "peas.jpg",
+                quantity: "3kg",
+                price: 99,
+                discount: 0,
+                category: "under99"
+            },
+
+            {
+                name: "Strawberry",
+                image: "strawberry.jpg",
+                quantity: "1kg",
+                price: 99,
+                discount: 0,
+                category: "under99"
+            },
+
+            {
+                name: "Ginger",
+                image: "ginger.jpg",
+                quantity: "500gm",
+                price: 99,
+                discount: 0,
+                category: "under99"
+            },
+
+            {
+                name: "Milk",
+                image: "milk..jpg",
+                quantity: "500ml",
+                price: 49,
+                discount: 0,
+                category: "under49"
+            },
+
+            {
+                name: "Curd",
+                image: "curd.jpg",
+                quantity: "800ml",
+                price: 49,
+                discount: 0,
+                category: "under49"
+            },
+
+            {
+                name: "Butter",
+                image: "butter.jpg",
+                quantity: "250gm",
+                price: 49,
+                discount: 0,
+                category: "under49"
+            }
+        ];
+
+        function renderProducts() {
+            products.forEach(product => {
+                const section = document.getElementById(product.category);
+                const productDiv = document.createElement("div");
+                productDiv.className = "sub";
+
+                //         productDiv.innerHTML = `
+                //   <img src="${product.image}" alt="${product.name}" />
+                //   <p>${product.name}</p>
+                //   <p>${product.quantity} @ ₹${product.price}</p>
+                //   ${product.discount > 0 ? `<p>Discount: ₹${product.discount}</p>` : ""}
+                //   <input type="number" placeholder="Qty" />
+                //   <br />
+                //   <button onclick="viewDetails('${product.name}')">View Details</button>
+                // `;
+
+                productDiv.innerHTML = `
+                 <img src="${product.image}" alt="${product.name}" />
+                 <p>${product.name}</p>
+                 <p>${product.quantity} @ ₹${product.price}</p>
+                 ${product.discount > 0 ? `<p>Discount: ₹${product.discount}</p>` : ""}
+                 <input type="number" placeholder="Qty" id="qty-${product.name}" min="1" value="1" />
+                 <br />
+                 <button onclick="viewDetails('${product.name}')">View Details</button>
+                 <button onclick="addToCart('${product.name}')">Add to Cart</button>
+                `;
+
+
+
+                section.appendChild(productDiv);
+            });
+        }
+
+        function viewDetails(name) {
+            const product = products.find(p => p.name === name);
+            if (product) {
+                document.getElementById("homeView").style.display = "none";
+                document.getElementById("detailView").style.display = "block";
+
+                const detailBox = document.getElementById("productDetail");
+                detailBox.innerHTML = `
+          <h3>${product.name}</h3>
+          <img src="${product.image}" alt="${product.name}" />
+          <p>Quantity: ${product.quantity}</p>
+          <p>Price: ₹${product.price}</p>
+          ${product.discount ? `<p>Discount: ₹${product.discount}</p>` : ""}
+        `;
+            }
+        }
+
+        function goBack() {
+            document.getElementById("homeView").style.display = "block";
+            document.getElementById("detailView").style.display = "none";
+        }
+
+        // Load everything
+        renderProducts();
+
+        function addToCart(productName) {
+            const product = products.find(p => p.name === productName);
+            const qtyInput = document.getElementById(`qty-${productName}`);
+            const quantity = parseInt(qtyInput.value) || 1;
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            const existingProduct = cart.find(item => item.name === product.name);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                cart.push({
+                    name: product.name,
+                    image: product.image,
+                    quantity: quantity,
+                    price: product.price,
+                    discount: product.discount
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} added to cart!`);
+        }
+
+    </script>
+</body>
+
+</html>

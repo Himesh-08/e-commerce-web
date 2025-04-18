@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <h2>Product Detail</h2>
+  <div id="productDetail" class="detail-box"></div>
+
+  <button onclick="window.location.href='indextemp.html'">Back to Home</button>
+
+  <script>
+    const products = JSON.parse(localStorage.getItem('productList')) || [
+      // Copy the same product object array here if you want to keep it static
+      // Or in real usage, fetch from server or reuse a separate JS file
+    ];
+
+    const selectedName = localStorage.getItem("selectedProduct");
+
+    const product = products.find(p => p.name === selectedName);
+
+    const detailBox = document.getElementById("productDetail");
+
+    if (product) {
+      detailBox.innerHTML = `
+        <h3>${product.name}</h3>
+        <img src="${product.image}" alt="${product.name}" />
+        <p>Quantity: ${product.quantity}</p>
+        <p>Price: ₹${product.price}</p>
+        ${product.discount ? `<p>Discount: ₹${product.discount}</p>` : ""}
+      `;
+    } else {
+      detailBox.innerHTML = "<p>Product not found</p>";
+    }
+  </script>
+</body>
+</html>

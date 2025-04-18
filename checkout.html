@@ -1,0 +1,61 @@
+<!-- checkout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .summary { background: #f0f0f0; padding: 20px; max-width: 400px; border: 1px solid #ccc; }
+    button { background: green; color: white; padding: 10px; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<h1>💳 Checkout</h1>
+<a href="cart2.html">← Back to Cart</a>
+
+<div class="summary" id="checkout-summary"></div>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function getDiscount(subtotal) {
+    if (subtotal >= 300) return 30;
+    if (subtotal >= 200) return 20;
+    if (subtotal >= 100) return 10;
+    return 0;
+  }
+
+  function renderSummary() {
+    const container = document.getElementById("checkout-summary");
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>No items to checkout.</p>";
+      return;
+    }
+
+    let subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    let discount = getDiscount(subtotal);
+    let total = subtotal - discount;
+
+    container.innerHTML = `
+      <p>Subtotal: ₹${subtotal}</p>
+      <p>Discount: ₹${discount}</p>
+      <h3>Total: ₹${total}</h3>
+      <button onclick="confirmOrder()">Confirm Order</button>
+    `;
+  }
+
+  function confirmOrder() {
+    alert("🎉 Order Confirmed!");
+    localStorage.removeItem("cart");
+    window.location.href = "shoptemp.html";
+  }
+
+  renderSummary();
+</script>
+
+</body>
+</html>

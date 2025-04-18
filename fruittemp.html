@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fresh Mart - shop/fruits</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 0px;
+            margin: 0px;
+            ;
+            background: #f4f4f4;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+        }
+
+        #logo{
+    height: 60px;
+    border-radius: 30px;
+}
+.logo {
+    padding: 10px;
+    height: 10px;
+}
+
+        button {
+            background: green;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quantity {
+            width: 50px;
+        }
+
+   
+        .main{
+    display: flexbox;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    overflow-x:auto;
+    scroll-behavior: smooth;
+    gap:1rem;
+    transition: 3s;
+    
+  }
+ .main :hover
+ {
+    color: black;
+    transform: scale(1.1);
+   
+ }
+        .product img {
+            width: 100%;
+            height: 50%;
+            
+        }
+       
+    </style>
+    <link rel="stylesheet" href="shop.css"/> </head>
+
+<body>
+    <nav class="navbar">
+        <img src="log02.jpg" id="logo">
+        <ul class="nav-links">
+            <li><a href="indextemp.html">Home</a></li>
+            <li class="menu-item dropdown">
+                <a href="shoptemp.html">Shop</a>
+                <ul class="dropdown-list">
+                    <li><a href="vegetabletemp.html">Vegetables</a></li>
+                    <li><a href="fruittemp.html">Fruits</a></li>
+                    <li><a href="dairytemp.html">Dairy products</a></li>
+            </li>
+        </ul>
+        <li><a href="aboutus.html">About Us </a></li>
+        <li><a href="deals.html">Deals</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="Search products...">
+            <ul id="results"></ul>
+        </div>
+        <a href="form.html" class="form">Log-in</a>
+        <a class="cart" href="cart2.html">🛒</a>
+    </nav>
+    <br>
+
+    <!-- <h1>🛒 Fresh Mart - Shop</h1> -->
+    <!-- <a href="cart.html">Go to Cart</a> -->
+    <div class="main">
+
+        <div class="product">
+            <img src="grapes.jpg">
+            <p class="name">Grapes</p>
+            <p class="price">40</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="strawberry.jpg">
+            <p class="name">Strawberry</p>
+            <p class="price">59</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="papaya.jpg">
+            <p class="name">Papaya</p>
+            <p class="price">20</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="watermelon.jpg">
+            <p class="name">watermelon</p>
+            <p class="price">25</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="jackfruit.jpg">
+            <p class="name">jackfruit</p>
+            <p class="price">49</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="product">
+            <img src="pineapple.jpg">
+            <p class="name">pineapple</p>
+            <p class="price">40</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="apple.jpg">
+            <p class="name">apple</p>
+            <p class="price">29</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="banana.jpg">
+            <p class="name">Banana</p>
+            <p class="price">30</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="kiwi.jpg">
+            <p class="name">Kiwi</p>
+            <p class="price">99</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="mango.jpg">
+            <p class="name">Mango</p>
+            <p class="price">150</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="product">
+            <img src="cherry.jpg">
+            <p class="name">cherry</p>
+            <p class="price">100</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="lime.jpg">
+            <p class="name">Lime</p>
+            <p class="price">40</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chikoo.jpg">
+            <p class="name">chikoo</p>
+            <p class="price">20</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="dragonfruit.jpg">
+            <p class="name">dragonfruit</p>
+            <p class="price">69</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="mangosteen.jpg">
+            <p class="name">mangosteen</p>
+            <p class="price">49</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="product">
+            <img src="custard apple.jpg">
+            <p class="name">custardapple</p>
+            <p class="price">39</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="blueberry.jpg">
+            <p class="name">blueberry</p>
+            <p class="price">49</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="pomegranate.jpg">
+            <p class="name">pomegranate</p>
+            <p class="price">39</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="persimmon.jpg">
+            <p class="name">persimmon</p>
+            <p class="price">49</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="avocado.jpg">
+            <p class="name">avocado</p>
+            <p class="price">99</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="product">
+            <img src="pear.jpg">
+            <p class="name">pear</p>
+            <p class="price">30</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="peach.jpg">
+            <p class="name">peach</p>
+            <p class="price">49</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="orange.jpg">
+            <p class="name">orange</p>
+            <p class="price">30</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="plum.jpg">
+            <p class="name">plum</p>
+            <p class="price">40</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="mixfruits.jpeg">
+            <p class="name">mixfruits</p>
+            <p class="price">150</p>
+            <input type="number" class="quantity" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <footer>
+        <p class="thanks"> - Thats all folks - </p>
+        <div class="app">
+            <p>Get in touch with us.</p>
+            <img src="facebook.jpg">
+            <img src="twit.jpg">
+            <img src="instagram.jpg">
+        </div>
+        <p>Contact Us : 5461284315</p>
+        <p>Copyright since 2008</p>
+        <p>Designed by Riya and Himesh</p>
+    </footer>
+
+    <!-- Add all other products here -->
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        document.querySelectorAll(".add-to-cart").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const product = btn.closest(".product");
+                const name = product.querySelector(".name").innerText;
+                const price = parseFloat(product.querySelector(".price").innerText);
+                const quantity = parseInt(product.querySelector(".quantity").value);
+
+                const existing = cart.find(item => item.name === name);
+                if (existing) {
+                    existing.quantity += quantity;
+                } else {
+                    cart.push({ name, price, quantity });
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+                alert(`${quantity} x ${name} added to cart!`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

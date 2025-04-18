@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Mart</title>
+  <link rel="stylesheet" href="shop.css">
+  <style>
+    body {
+        font-family: Arial;
+        padding: 0px;
+        margin: 0px;
+        ;
+        background: #f4f4f4;
+    }
+
+    .product {
+        border: 1px solid #ccc;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        width: 200px;
+    }
+
+    #logo{
+    height: 60px;
+    border-radius: 30px;
+}
+.logo {
+    padding: 10px;
+    height: 10px;
+}
+    button {
+        background: green;
+        color: white;
+        padding: 6px 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .quantity {
+        width: 50px;
+    }
+
+
+    .main{
+display: flexbox;
+display: flex;
+justify-content: center;
+margin-top: 15px;
+overflow-x:auto;
+scroll-behavior: smooth;
+gap:1rem;
+transition: 3s;
+
+}
+.main :hover
+{
+color: black;
+transform: scale(1.1);
+
+}
+    .product img {
+        width: 100%;
+        height: 50%;
+    }
+</style>
+  <!-- <link href="index.js"> -->
+  <script>
+    // window.onload=function(){
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const slides = document.querySelectorAll('.slide');
+    //   let index = 0;
+
+    //   function showNextSlide() {
+    //     slides[index].style.display = "none"; // Hide the current slide
+    //     index = (index + 1) % slides.length; // Move to the next slide (or loop back to the first)
+    //     slides[index].style.display = "flex"; // Show the next slide
+    //   }
+
+    //   // Ensure only the first slide is visible initially
+    //   slides.forEach((slide, i) => {
+    //     slide.style.display = i === 0 ? "flex" : "none";
+    //   });
+
+    //   // Automatically change slides every 3 seconds
+    //   setInterval(showNextSlide, 3000);
+    // });
+    // document.querySelector('.menu-item.dropdown').addEventListener('click', function (e) {
+    //   const dropdownList = this.querySelector('.dropdown-list');
+    //   dropdownList.style.display = dropdownList.style.display === 'block' ? 'none' : 'block';
+    //   e.preventDefault(); // Prevent link default behavior
+    // });
+    // }
+
+  </script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <img src="log02.jpg" id="logo">
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li class="menu-item dropdown">
+        <a href="shoptemp.html">Shop</a>
+        <ul class="dropdown-list">
+          <li><a href="vegetabletemp.html">Vegetables</a></li>
+          <li><a href="fruittemp.html">Fruits</a></li>
+          <li><a href="dairytemp.html">Dairy products</a></li>
+      </li>
+    </ul>
+    <li><a href="aboutus.html">About Us </a></li>
+    <li><a href="dealstemp.html">Deals</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" id="search-bar" placeholder="Search products...">
+      <ul id="results"></ul>
+    </div>
+    <a href="form.html" class="form">Log-in</a>
+    <a class="cart" href="cart2.html">🛒</a>
+  </nav>
+  <br>
+  <!-- <div id="deal">
+        <marquee>on shopping above 150 get 10% discount . </marquee>
+    </div> -->
+  <!-- <div class="slider">
+    <div class="slide">
+      <img src="tomato.jpg" alt="Image 1">
+      <div class="text-content">
+        <h3>Slide 1</h3> <p>Description for Slide 1</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="biiterground.jpg" alt="Image 2">
+      <div class="text-content">
+        <h3>biiterground</h3>
+        <p>Description for Slide 2</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="cabbage.jpg" alt="Image 3">
+      <div class="text-content">
+        <h3>coliflower</h3>
+        <p>Get 5% discount on 2kg coliiflower</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="chilli.jpg" alt="Image 4">
+      <div class="text-content">
+        <h3>slide 4</h2>
+          <p>Description for Slide 4</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="palak.jpg" alt="Image 5">
+      <div class="text-content">
+        <h3>Slide 5</h3>
+        <p>Description for Slide 5</p>
+      </div>
+    </div>
+  </div> -->
+  <h2>Top offers</h2>
+  <div class="main">
+
+    <div class="product">
+        <img src="onion.jpg">
+        <p class="name">onion</p>
+        <p class="price">20</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="mango.jpg">
+        <p class="name">mango</p>
+        <p class="price">2kg @199</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="paneer.jpg">
+        <p class="name">paneer</p>
+        <p class="price">20% off 100</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="cheeseslice.jpg">
+        <p class="name">cheeseslice</p>
+        <p class="price">buy 1 get 1 free</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+</div>
+<h2>under 99</h2>
+<div class="main">
+    <div class="product">
+        <img src="grapes.jpg">
+        <p class="name">grapes</p>
+        <p class="price">2kg @89</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="strawberry.jpg">
+        <p class="name">strawberry</p>
+        <p class="price">99</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="ginger.jpg">
+        <p class="name">ginger</p>
+        <p class="price">85</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="amulbutter.jpg">
+        <p class="name">butter</p>
+        <p class="price">99</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+<h2>under 49</h2>
+<div class="main">
+    <div class="product">
+        <img src="milk..jpg">
+        <p class="name">milk</p>
+        <p class="price">40</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="curd.jpg">
+        <p class="name">Curd</p>
+        <p class="price">39</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="biscuit.jpg">
+        <p class="name">cream biscuit</p>
+        <p class="price">49</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="cream roll.jpg">
+        <p class="name">cream roll</p>
+        <p class="price">49</p>
+        <input type="number" class="quantity" value="1" min="1">
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+<footer>
+    <p class="thanks"> - Thats all folks - </p>
+    <div class="app">
+        <p>Get in touch with us.</p>
+        <img src="facebook.jpg">
+        <img src="twit.jpg">
+        <img src="instagram.jpg">
+    </div>
+    <p>Contact Us : 5461284315</p>
+    <p>Copyright since 2008</p>
+    <p>Designed by Riya and Himesh</p>
+</footer>
+
+<!-- Add all other products here -->
+
+<script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const product = btn.closest(".product");
+            const name = product.querySelector(".name").innerText;
+            const price = parseFloat(product.querySelector(".price").innerText);
+            const quantity = parseInt(product.querySelector(".quantity").value);
+
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.quantity += quantity;
+            } else {
+                cart.push({ name, price, quantity });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${quantity} x ${name} added to cart!`);
+        });
+    });
+</script>
+
+</body>
+
+</html>
