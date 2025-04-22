@@ -52,7 +52,7 @@ body {
 .search-bar {
     display: flex;
     align-items: center;
-    background: white;
+/*     background: white; */
     border-radius: 5px;
     padding: 5px;
 }
