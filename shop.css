@@ -267,17 +267,25 @@ button { background: green;
 
     .nav-links {
         display: none;
+        /* background-color: green; */
+    }
+    .navbar{
+        background-color: green;
     }
 
     .search-bar input {
         width: 100%;
+        background-color: green;
     }
 
     .cart, .form {
         font-size: 14px;
+        background-color: green;
+    }
+    a{
+        background-color: green;
     }
 }
-
 /* For phones and small tablets (portrait) (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
     .main {
